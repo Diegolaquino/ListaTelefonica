@@ -29,11 +29,10 @@
 
             $scope.adicionarContato = function(contato){
                 contato.data = new Date('1991/02/28');
-                $scope.contatos.push(angular.copy(contato));
-                delete $scope.contato;
-                $scope.contatoForm.$setPristine();
-                contatosAPI.saveContatos().then(function sucessCallBack(data){
-                    $scope.contatos = data.data;
+                contatosAPI.saveContatos(contato).then(function sucessCallBack(data){
+                    delete $scope.contato;
+                    $scope.contatoForm.$setPristine();
+                    carregarContatos();
                 }, function errorCallBack(data){
                     $scope.message = "Aconteceu um problema: " + data;
                 });
