@@ -1,0 +1,38 @@
+{
+	"contatos": [
+	{
+		"nome": "Diego",
+		"telefone": "992034654",
+		"data": "2020/01/28",
+		"operadora": 
+		{
+			"nome": "Oi",
+			"codigo": 14,
+			"categoria":
+			"Celular"
+		}
+	},
+	{
+		"nome": "Pietro",
+		"telefone": "38226922",
+		"data": "2020/01/20",
+		"operadora": 
+		{
+			"nome": "Vivo",
+			"codigo": 15,
+			"categoria": "Celular"
+		}
+	},
+	{
+		"nome": "Cachorro",
+		"telefone": "74151728",
+		"data": "2020/01/02",
+		"operadora": 
+		{
+			"nome": "Claro",
+			"codigo": 51,
+			"categoria": "Fixo"
+		}
+	}
+	]
+}

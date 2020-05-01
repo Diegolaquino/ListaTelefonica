@@ -6,71 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista Telefonica</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="angular/angular.js"></script>
     <script src="angular/angular-messages.js"></script>
     <script src="angular/angular-locale_pt-br.js"></script>
-    <style>
-    .jumbotron{
-        width: 700px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 20px;
-    }
-    .form-control{
-        margin-bottom: 10px;;
-    }
-    .selecionado{
-        background-color: #0094ff;
-    }
-    .negrito{
-        font-weight: bold;
-    }
-    </style>
-    <script>
-        angular.module("listaTelefonica", ["ngMessages"]);
-        angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($scope, $filter){
-            $scope.app = "Lista Telefonica";
-            $scope.contatos = [
-                {nome: $filter('uppercase')("Diego"), telefone: "992034654", data: new Date(), operadora: {nome: "Oi", codigo: 14, categoria: "Celular"}},
-                {nome: "Pietro", telefone: "38226922", data: new Date(), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular"}},
-                {nome: "Cachorro", telefone: "74151728", data: new Date(), operadora: {nome: "Claro", codigo: 51, categoria: "Fixo"}}
-            ];
-            $scope.operadoras = [
-                {nome: "Oi", codigo: 14, categoria: "Celular", preco: 2},
-                {nome: "Vivo", codigo: 15, categoria: "Celular", preco: 3},
-                {nome: "Tim", codigo: 41, categoria: "Celular", preco: 1},
-                {nome: "Claro", codigo: 51, categoria: "Fixo", preco: 1},
-                {nome: "GVT", codigo: 25, categoria: "Fixo", preco: 4}
-            ];
-            $scope.adicionarContato = function(contato){
-                contato.data = new Date('1991/02/28');
-                $scope.contatos.push(angular.copy(contato));
-                delete $scope.contato;
-                $scope.contatoForm.$setPristine();
-            }
-            $scope.selecionado;
-            $scope.apagarContatos = (contatos) => {
-                let selecionados = contatos.filter(c => !c.selecionado);
-                $scope.contatos = selecionados;
-            }
-            $scope.isContatoSelecionado = (contatos) => {
-                return contatos.some(function(contato) {
-                    return contato.selecionado;
-                });
-            }
-            $scope.ordernarPor = function(campo){
-                $scope.criterioDeOrdenacao = campo;
-                $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
-            }
-           
-            
-        });
-    </script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/listaTelefonicaController.js"></script>
+    <script src="js/services/contatosAPIService.js"></script>
+    
 </head>
-<body ng-controller="listaTelefonicaCtrl">
+<body ng-controller="listaTelefonicaController">
     <div class="jumbotron">
-        <h4> {{ app }} </h4>
+        <h1> {{ app }} </h1>
+        <div ng-init="init()">Teste</div>
         <input class="form-control" ng-model="criterioBusca" placeholder="O que você está buscando?">
         <table class="table table-striped" ng-show="contatos.length > 0">
             <tr>
@@ -114,5 +62,6 @@
             O telefone deve ter esse formato 0000-0000!
         </div>
     </div>
+    
 </body>
 </html>
