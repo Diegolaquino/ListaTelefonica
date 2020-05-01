@@ -1,12 +1,11 @@
-angular.module("listaTelefonica").factory("contatosAPI", function ($http) {
-    const mainUrl = "http://localhost:3000/contatos";
-    
+angular.module("listaTelefonica").factory("contatosAPI", function ($http, config) {
+
     var _getContatos = function (){
-        return $http.get(mainUrl);
+        return $http.get(config.baseUrl + "/contatos");
     };
 
     var _saveContatos = function (contato){
-        return $http.post(mainUrl, contato);
+        return $http.post(config.baseUrl + "/contatos", contato);
     };
 
     return {

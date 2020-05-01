@@ -1,5 +1,5 @@
        
-        angular.module("listaTelefonica").controller("listaTelefonicaController", function($scope, $filter, $http, contatosAPI){
+        angular.module("listaTelefonica").controller("listaTelefonicaController", function($scope, $filter, $http, contatosAPI, operadorasAPI){
             $scope.app = "Lista Telefonica";
             $scope.contatos = [];
 
@@ -13,18 +13,11 @@
             }
 
             var carregarOperadoras = () => {
-                // $http.get("http://url.com").sucess((data, status) => {
-                //     $scope.contatos = data;
-                //     console.log("aqui");
-                // });
-
-                $scope.operadoras = [
-                {nome: "Oi", codigo: 14, categoria: "Celular", preco: 2},
-                {nome: "Vivo", codigo: 15, categoria: "Celular", preco: 3},
-                {nome: "Tim", codigo: 41, categoria: "Celular", preco: 1},
-                {nome: "Claro", codigo: 51, categoria: "Fixo", preco: 1},
-                {nome: "GVT", codigo: 25, categoria: "Fixo", preco: 4}
-            ];
+                operadorasAPI.getOperadoras().then(function sucessCallBack(data){
+                    $scope.operadoras = data.data;
+                }, function errorCallBack(data){
+                    $scope.message = "Aconteceu um problema: " + data;
+                });
             }
 
             $scope.adicionarContato = function(contato){
