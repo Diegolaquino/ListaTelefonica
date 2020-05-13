@@ -13,7 +13,9 @@
     <script src="js/app.js"></script>
     <script src="js/controllers/listaTelefonicaController.js"></script>
     <script src="js/services/configValue.js"></script>
+    <script src="js/services/serialGeneratorConfig.js"></script>
     <script src="js/services/contatosAPIService.js"></script>
+    <script src="js/services/serialGeneratorService.js"></script>
     <script src="js/services/operadorasAPIService.js"></script>
     
 </head>
@@ -25,6 +27,7 @@
         <table class="table table-striped" ng-show="contatos.length > 0">
             <tr>
                 <th></th>
+                <th>Serial</th>
                 <th><a href="#" ng-click="ordernarPor('nome')">Nome</a></th>
                 <th><a href="#" ng-click="ordernarPor('telefone')">Telefone</a></th>
                 <th>Operadora</th>
@@ -32,6 +35,7 @@
             </tr>
             <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter:{nome:criterioBusca} | orderBy: criterioDeOrdenacao:direcaoDaOrdenacao">
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
+                <td>{{ contato.serial }}</td>
                 <td>{{ contato.nome }}</td>
                 <td>{{ contato.telefone }}</td>
                 <td>{{ contato.operadora.nome }}</td>
@@ -64,6 +68,9 @@
             O telefone deve ter esse formato 0000-0000!
         </div>
     </div>
+    <script>
+       
+    </script>
     
 </body>
 </html>

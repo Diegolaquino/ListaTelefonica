@@ -33,48 +33,43 @@
         "categoria": "Fixo"
       }
     },
-    {
-      "id": 4,
-      "nome": "Teste",
-      "telefone": "992034654",
-      "data": "2020/12/28",
-      "operadora": {
-        "nome": "Oi",
-        "codigo": 14,
-        "categoria": "Celular"
-      }
-    },
-    {
-      "id": 5,
-      "nome": "Teste2",
-      "telefone": "99205555",
-      "data": "2020/12/28",
-      "operadora": {
-        "nome": "Oi",
-        "codigo": 14,
-        "categoria": "Celular"
-      }
-    },
-    {
-      "nome": "Teste3",
-      "telefone": "2525-2525",
-      "operadora": {
-        "nome": "Vivo",
-        "codigo": 15,
-        "categoria": "Celular",
-        "preco": 3
-      },
-      "data": "1991-02-28T03:00:00.000Z",
-      "id": 6
-    }
   ],
-  "operadoras":[
-	{"nome": "Oi", "codigo": 14, "categoria": "Celular", "preco": 2},
-	{"nome": "Vivo", "codigo": 15, "categoria": "Celular", "preco": 3},
-	{"nome": "Tim", "codigo": 41, "categoria": "Celular", "preco": 1},
-	{"nome": "Claro", "codigo": 51, "categoria": "Fixo", "preco": 1},
-	{"nome": "GVT", "codigo": 25, "categoria": "Fixo", "preco": 4},
-	{"nome": "Correios", "codigo": 35, "categoria": "Celular", "preco": 7}
-
+  "operadoras": [
+    {
+      "nome": "Oi",
+      "codigo": 14,
+      "categoria": "Celular",
+      "preco": 2
+    },
+    {
+      "nome": "Vivo",
+      "codigo": 15,
+      "categoria": "Celular",
+      "preco": 3
+    },
+    {
+      "nome": "Tim",
+      "codigo": 41,
+      "categoria": "Celular",
+      "preco": 1
+    },
+    {
+      "nome": "Claro",
+      "codigo": 51,
+      "categoria": "Fixo",
+      "preco": 1
+    },
+    {
+      "nome": "GVT",
+      "codigo": 25,
+      "categoria": "Fixo",
+      "preco": 4
+    },
+    {
+      "nome": "Correios",
+      "codigo": 35,
+      "categoria": "Celular",
+      "preco": 7
+    }
   ]
 }
